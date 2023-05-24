@@ -1,0 +1,200 @@
+/*==============================
+~> Name Temp     : Table Match Auto
+~> Version	     : V 2.0
+~> Last Updated  : 20 - 05 - 2023 : 12:00 AM
+~> Dev By     	 : Sting Dev  - Facebook Page ->  https://www.facebook.com/stingweb.eg
+~> Desgin URL    : sting-web.blogspot.com
+===============================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+.overlay-match,
+.text-match {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.loadTd:before {
+  content: "جاري عرض المباريات ...";
+  background: #263545;
+  color: #fff;
+  padding: 7px;
+  display: flex;
+  width: 30%;
+  text-align: center;
+  justify-content: center;
+  margin: 22px auto;
+  border-radius: 6px;
+}
+.match-container {
+  overflow: hidden;
+  text-align: center;
+  background: #eceef2;
+  margin-bottom: 12px;
+  position: relative;
+  border-radius: 8px;
+}
+.match-container h4 {
+  margin: 30px 0;
+}
+.match-container a {
+  color: #222;
+}
+.no-data__msg {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #666;
+}
+.left-team,
+.match-center,
+.match-info li,
+.right-team {
+  width: 33.33333333%;
+  float: right;
+}
+.match-container.comming #result,
+.match-container.commingsoon #result,
+.match-container.end div#match-time,
+.match-container.finshed #match-time,
+.match-container.gools #match-time,
+.match-container.live #match-time,
+.none {
+  display: none;
+}
+.team-logo {
+  float: right;
+  width: 50%;
+}
+.left-team .team-logo {
+  float: left;
+}
+.team-logo img {
+  margin: 10px auto;
+  display: flex;
+}
+.team-name {
+  margin: 28px auto;
+  display: table;
+}
+.match-timing {
+  margin: 12px auto;
+}
+#result {
+  font-size: 21px;
+  letter-spacing: 5px;
+  margin-right: -5px;
+}
+.match-timing .date,
+.match-timing .live:before {
+  color: #fff;
+  background: #263545;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 90px;
+  line-height: 1.9;
+  display: table;
+  margin: 6px auto auto;
+  position: relative;
+}
+.Stingflex .commingsoon {
+  order: 3;
+}
+.Stingflex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.Stingflex .live {
+  order: 2;
+}
+.Stingflex .soon {
+  order: 1;
+}
+.Stingflex .gools {
+  order: 4;
+}
+.Stingflex .end,
+.Stingflex .finshed {
+  order: 5;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.match-timing .live::before {
+  min-width: 53px;
+  right: 0;
+  content: "جارية الآن";
+  position: absolute;
+  animation: 0.5s ease-in-out infinite blinker;
+  margin: 0;
+}
+.match-timing .live {
+  background: #d00000;
+}
+.match-timing .end {
+  background: #474747;
+}
+.match-timing .soon {
+  background: #0f6f37;
+}
+.match-info {
+  border-top: 1px solid #ddd;
+  display: table;
+  overflow: hidden;
+  width: 100%;
+}
+.match-info li {
+  font-size: 14px;
+  font-weight: 100;
+}
+.overlay-match {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  background: rgb(0 0 0 / 60%);
+  z-index: 9;
+}
+.match-container:hover .overlay-match {
+  opacity: 1;
+}
+.text-match {
+  position: absolute;
+  height: 45px;
+  margin: auto;
+  width: 45px;
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg aria-hidden='true' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' %3E%3Cpath fill='%23fff' d='M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80  c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176 c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57 S349.156,266.641,344.48,269.57z' class=''%3E%3C/path%3E%3C/svg%3E")
+    center no-repeat;
+}
+@media screen and (max-width: 720px) {
+  .team-logo {
+    width: 100%;
+  }
+  .team-logo img {
+    margin: 7px auto 0;
+    width: 50px;
+    height: 50px;
+  }
+  .team-name {
+    margin: 0 auto 7px;
+  }
+  .match-timing {
+    margin: 13px auto;
+  }
+  .match-info {
+    display: none;
+  }
+}
