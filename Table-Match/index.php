@@ -1,6 +1,5 @@
-﻿<?php
+<?php
 
-// تحميل مكتبة Simple HTML DOM
 require 'simple_html_dom.php';
 
 $yesterdayUrl = 'https://stad.yalla-shoot.io/matches-yesterday7/'; 
