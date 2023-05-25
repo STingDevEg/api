@@ -8,7 +8,7 @@
     
     <script>
         $(document).ready(function() {
-            $.getJSON("index.php", function(data) {
+            $.getJSON("https://api.sting-web.com/Table-Match/index.php", function(data) {
                 var jsonData = JSON.stringify(data, null, 2);
                 $("#data-container").text(jsonData);
             });
