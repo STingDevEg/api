@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="data-container"></div>
+    
+    <script>
+        $(document).ready(function() {
+            $.getJSON("index.php", function(data) {
+                var jsonData = JSON.stringify(data, null, 2);
+                $("#data-container").text(jsonData);
+            });
+        });
+    </script>
+</body>
+</html>
